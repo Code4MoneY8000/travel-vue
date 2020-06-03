@@ -38,6 +38,7 @@ export default {
     .header-mid
       flex: 1
       height: .64rem
+      padding-left: .2rem
       line-height: .64rem
       background: #fff
       border-radius: .1rem
