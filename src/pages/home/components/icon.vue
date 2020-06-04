@@ -81,11 +81,10 @@ export default {
 
 <style lang="stylus" scoped>
   .icons
-    overflow: hidden
-    height: 0
-    padding-bottom: 50%
+    margin-top: .1rem
     .icon
       position: relative
+      overflow: hidden
       float: left
       width: 25%
       height: 0
