@@ -1,18 +1,21 @@
 <template>
 <div>
     <home-header></home-header>
-    <swiper></swiper>
+    <header-swiper></header-swiper>
+    <header-icon></header-icon>
 </div>
 </template>
 
 <script>
 import HomeHeader from './components/Header'
-import Swiper from './components/Swiper'
+import HeaderSwiper from './components/Swiper'
+import HeaderIcon from './components/icon'
 export default {
   name: 'Home',
   components: {
     HomeHeader,
-    Swiper
+    HeaderSwiper,
+    HeaderIcon
   }
 }
 </script>
