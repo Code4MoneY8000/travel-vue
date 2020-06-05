@@ -7,9 +7,12 @@
             <div class="header-mid">
                 <span class="iconfont">&#xe632;</span>
                 输入城市/景点/游玩主题</div>
-            <div class="header-right">{{this.city}}
+            <router-link to='/city' >
+              <div class="header-right">
+                {{this.city}}
                 <span class="iconfont">&#xe62d;</span>
-            </div>
+              </div>
+            </router-link>
         </div>
     </div>
 </template>
@@ -35,6 +38,7 @@ export default {
       width: .64rem
       float: left
     .header-right
+      color: #fff
       text-align: center
       width: 1.24rem
       float: right
