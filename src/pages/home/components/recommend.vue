@@ -1,13 +1,13 @@
 <template>
   <div>
       <div class="title">猜你喜欢</div>
-      <div class="item" v-for='item of itemList' :key='item.id'>
+      <div class="item" v-for='item of list' :key='item.id'>
         <div class="item-icon">
-          <img class="item-img" :src="item.imgsrc" alt="">
+          <img class="item-img" :src="item.imgUrl" alt="">
         </div>
         <div class="item-info">
           <div class="item-name">
-            <p>{{item.name}}</p>
+            <p>{{item.title}}</p>
           </div>
           <div class="item-desc">
             <p>{{item.desc}}</p>
@@ -21,27 +21,8 @@
 <script>
 export default {
   name: 'HeaderRecommend',
-  data () {
-    return {
-      itemList: [
-        {
-          id: '0001',
-          imgsrc: 'https://imgs.qunarzz.com/sight/p0/201403/10/6440fa40ad1703fab4aaae39de138f10.jpg_200x200_2717ca74.jpg',
-          name: '鄣山大峡谷',
-          desc: '美丽的大峡谷'
-        }, {
-          id: '0002',
-          imgsrc: 'https://imgs.qunarzz.com/sight/p0/201403/10/6440fa40ad1703fab4aaae39de138f10.jpg_200x200_2717ca74.jpg',
-          name: '鄣山大峡谷',
-          desc: '美丽的大峡谷'
-        }, {
-          id: '0003',
-          imgsrc: 'https://imgs.qunarzz.com/sight/p0/201403/10/6440fa40ad1703fab4aaae39de138f10.jpg_200x200_2717ca74.jpg',
-          name: '鄣山大峡谷',
-          desc: '美丽的大峡谷'
-        }
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
