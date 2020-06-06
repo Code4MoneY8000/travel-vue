@@ -2,8 +2,8 @@
   <div>
     <city-header></city-header>
     <city-search></city-search>
-    <city-list :hot='hot' :cities='cities'></city-list>
-    <city-alphabet :cities='cities'></city-alphabet>
+    <city-list :hot='hot' :cities='cities' :alpha='alpha'></city-list>
+    <city-alphabet :cities='cities' @change='handleChange'></city-alphabet>
   </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
   data () {
     return {
       hot: [],
-      cities: {}
+      cities: {},
+      alpha: ''
     }
   },
   mounted () {
@@ -41,6 +42,9 @@ export default {
         this.hot = res.data.hotCities
         this.cities = res.data.cities
       }
+    },
+    handleChange (e) {
+      this.alpha = e
     }
   }
 }

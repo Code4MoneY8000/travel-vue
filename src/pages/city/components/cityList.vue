@@ -21,7 +21,7 @@
             </div>
         </div>
       </div>
-      <div class='area' v-for="(item,key) of cities" :key="key">
+      <div class='area' v-for="(item,key) of cities" :key="key" :ref="key">
         <div class="header border-topbottom">{{key}}</div>
           <div class="item-list" v-for="inneritem of item" :key="inneritem.id">
               <div class="item">{{inneritem.name}}</div>
@@ -40,7 +40,16 @@ export default {
   },
   props: {
     hot: Array,
-    cities: Object
+    cities: Object,
+    alpha: String
+  },
+  watch: {
+    alpha () {
+      if (this.alpha) {
+        const element = this.$refs[this.alpha][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>

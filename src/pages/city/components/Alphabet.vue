@@ -1,6 +1,6 @@
 <template>
     <div class="list">
-      <div class="item" v-for="(item,key) of cities" :key='key'>{{key}}</div>
+      <div class="item" v-for="(item,key) of cities" :key='key' @click='handleClick'>{{key}}</div>
     </div>
 </template>
 
@@ -9,6 +9,11 @@ export default {
   name: 'cityAlphabet',
   props: {
     cities: Object
+  },
+  methods: {
+    handleClick (e) {
+      this.$emit('change', e.target.innerText)
+    }
   }
 }
 </script>
