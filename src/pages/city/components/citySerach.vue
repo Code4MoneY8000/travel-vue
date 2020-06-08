@@ -34,6 +34,7 @@ export default {
     handleCityChange (e) {
       this.$store.dispatch('changeCity', e.target.innerText)
       this.$router.push('/')
+      this.keyword = ''
     }
   },
   watch: {

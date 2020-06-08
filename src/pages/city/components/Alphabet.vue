@@ -54,7 +54,7 @@ export default {
           if (move >= 0 && move < this.letters.length) {
             this.$emit('change', this.letters[move])
           }
-        }, 16)
+        }, 8)
       }
     },
     handleTouchend () {
