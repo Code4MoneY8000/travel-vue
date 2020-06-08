@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import App from './App'
+import store from './store'
 import router from './router'
 import 'styles/reset.css'
 import 'styles/iconfont.css'
@@ -19,6 +20,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
