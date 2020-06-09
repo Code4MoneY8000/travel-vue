@@ -1,7 +1,7 @@
 <template>
   <div>
       <div class="title">猜你喜欢</div>
-      <div class="item" v-for='item of list' :key='item.id'>
+      <router-link tag='div' :to="'/detail/'+item.id" class="item" v-for='item of list' :key='item.id'>
         <div class="item-icon">
           <img class="item-img" :src="item.imgUrl" alt="">
         </div>
@@ -14,7 +14,7 @@
           </div>
           <button class="item-moreinfo">查看详情</button>
         </div>
-      </div>
+      </router-link>
   </div>
 </template>
 
