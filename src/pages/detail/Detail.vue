@@ -3,7 +3,7 @@
     <detail-banner :sightName='sightName' :bannerImg='bannerImg' :imgs='gallaryImgs'></detail-banner>
     <detail-header></detail-header>
     <div class="content">
-      <detail-list :list='list'></detail-list>
+      <detail-list :list='categoryList'></detail-list>
     </div>
   </div>
 </template>
@@ -22,10 +22,10 @@ export default {
   },
   data () {
     return {
-      list: [],
       sightName: '',
       bannerImg: '',
-      gallaryImgs: []
+      gallaryImgs: [],
+      categoryList: []
     }
   },
   methods: {
@@ -43,6 +43,7 @@ export default {
         this.sightName = data.sightName
         this.bannerImg = data.bannerImg
         this.gallaryImgs = data.gallaryImgs
+        this.categoryList = data.categoryList
       }
     }
   },

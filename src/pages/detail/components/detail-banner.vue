@@ -7,17 +7,20 @@
             {{sightName}}
         </div>
         <div class="banner-number">
-            <span class="iconfont">&#xe64a;</span>
-            {{imgs.length}}
+              <span class="iconfont">&#xe64a;</span>
+              {{imgs.length}}
         </div>
         </div>
     </div>
-    <gallary class="banner-gallary" :imgs='imgs' v-show="showGallary" @close='handleShow'></gallary>
+    <fade>
+      <gallary class="banner-gallary" :imgs='imgs' v-show="showGallary" @close='handleShow'></gallary>
+    </fade>
   </div>
 </template>
 
 <script>
 import gallary from 'common/gallary/Gallary'
+import fade from 'common/fade/fade'
 export default {
   name: 'detail-banner',
   props: {
@@ -26,7 +29,8 @@ export default {
     imgs: Array
   },
   components: {
-    gallary
+    gallary,
+    fade
   },
   methods: {
     handleShow () {
