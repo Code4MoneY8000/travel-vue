@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="detail-banner" @click='handleShow'>
-        <img class="banner-img" src="//img1.qunarzz.com/sight/p0/201403/07/579ea27e6d965f0431939720edb7dc0a.jpg_600x330_9a3c4ab0.jpg" alt="">
+        <img class="banner-img" :src="bannerImg" alt="">
         <div class="banner-info">
         <div class="banner-text">
-            江南第一漂(AAA景区)
+            {{sightName}}
         </div>
         <div class="banner-number">
             <span class="iconfont">&#xe64a;</span>
-            10
+            {{imgs.length}}
         </div>
         </div>
     </div>
@@ -20,6 +20,11 @@
 import gallary from 'common/gallary/Gallary'
 export default {
   name: 'detail-banner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    imgs: Array
+  },
   components: {
     gallary
   },
@@ -30,8 +35,6 @@ export default {
   },
   data () {
     return {
-      imgs: ['http://img1.qunarzz.com/sight/p0/201403/07/579ea27e6d965f0431939720edb7dc0a.jpg_r_800x800_6249d8a7.jpg', 'http://img1.qunarzz.com/sight/p0/201403/07/e068e7c4a5fd74bc74a60af5952da0a3.jpg_r_800x800_0e9016b7.jpg',
-        'http://img1.qunarzz.com/sight/p0/201403/07/adcaac18eb93235e6925c7829ee5dd14.jpg_r_800x800_40eb92ea.jpg'],
       showGallary: false
     }
   }
